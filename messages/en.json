@@ -11,7 +11,11 @@
     "about": "About Us",
     "contact": "Contact",
     "cta": "Book a Consultation",
-    "book": "Book a Consultation"
+    "book": "Book a Consultation",
+    "login": "Sign in",
+    "register": "Register",
+    "logout": "Sign out",
+    "account": "Account"
   },
   "hero": {
     "badge": "20+ years of professional experience",
@@ -312,6 +316,29 @@
     "namePh": "Full name",
     "phoneHint": "We will call this number to confirm the time",
     "newBooking": "New booking"
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "loginSubtitle": "Sign in to access services.",
+    "registerTitle": "Create an account",
+    "registerSubtitle": "Enter your details to register.",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone number (optional)",
+    "password": "Password",
+    "passwordMin": "At least 8 characters",
+    "login": "Sign in",
+    "register": "Register",
+    "loggingIn": "Signing in…",
+    "registering": "Creating account…",
+    "loginSuccess": "Signed in successfully.",
+    "registerSuccess": "Account created.",
+    "invalid": "Incorrect email or password.",
+    "emailTaken": "This email is already registered.",
+    "error": "Operation failed. Please try again.",
+    "noAccount": "Don’t have an account?",
+    "haveAccount": "Already have an account?",
+    "loggedInAs": "Signed in as {name}"
   },
   "cta": {
     "title": "Ready when you are",

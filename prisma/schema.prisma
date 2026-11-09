@@ -31,7 +31,19 @@ enum MeetingMode {
   INPERSON
 }
 
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  phone        String?
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  @@index([email])
+}
+
 model ContactMessage {
+
   id               String        @id @default(cuid())
   customerType     CustomerType
   name             String

@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { Menu, Languages, CalendarCheck } from "lucide-react";
+import { Menu, Languages, CalendarCheck, LogIn, LogOut, UserPlus, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { toast } from "sonner";
 
 const links = [
   { href: "/", key: "home" },
@@ -15,11 +17,28 @@ const links = [
   { href: "/contact", key: "contact" },
 ] as const;
 
+type Me = { name: string; email: string } | null;
+
 export function SiteHeader() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const [user, setUser] = useState<Me>(null);
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then((r) => r.json())
+      .then((d) => setUser(d.user ?? null))
+      .catch(() => setUser(null));
+  }, [pathname]);
+
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    setUser(null);
+    toast.success(t("logout"));
+    router.refresh();
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -50,7 +69,27 @@ export function SiteHeader() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button render={<Link href="/book" />} size="sm" className="hidden gap-2 sm:inline-flex">
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger render={<Button variant="outline" size="sm" className="hidden gap-2 sm:inline-flex" />}>
+                <User className="size-4" /><span className="max-w-24 truncate">{user.name}</span>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={logout} className="gap-2"><LogOut className="size-4" />{t("logout")}</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <>
+              <Button render={<Link href="/login" />} variant="outline" size="sm" className="hidden gap-2 sm:inline-flex">
+                <LogIn className="size-4" />{t("login")}
+              </Button>
+              <Button render={<Link href="/register" />} size="sm" className="hidden gap-2 sm:inline-flex">
+                <UserPlus className="size-4" />{t("register")}
+              </Button>
+            </>
+          )}
+
+          <Button render={<Link href="/book" />} size="sm" variant="secondary" className="hidden gap-2 lg:inline-flex">
             <CalendarCheck className="size-4" />{t("book")}
           </Button>
 
@@ -66,7 +105,19 @@ export function SiteHeader() {
                     {t(key)}
                   </Button>
                 ))}
-                <Button render={<Link href="/book" />} className="mt-4 gap-2"><CalendarCheck className="size-4" />{t("book")}</Button>
+                <div className="my-2 border-t" />
+                {user ? (
+                  <>
+                    <p className="px-3 py-2 text-sm text-muted-foreground">{user.name}</p>
+                    <Button variant="ghost" className="justify-start gap-2 text-base" onClick={logout}><LogOut className="size-4" />{t("logout")}</Button>
+                  </>
+                ) : (
+                  <>
+                    <Button render={<Link href="/login" />} variant="ghost" className="justify-start gap-2 text-base"><LogIn className="size-4" />{t("login")}</Button>
+                    <Button render={<Link href="/register" />} className="mt-1 gap-2"><UserPlus className="size-4" />{t("register")}</Button>
+                  </>
+                )}
+                <Button render={<Link href="/book" />} variant="secondary" className="mt-2 gap-2"><CalendarCheck className="size-4" />{t("book")}</Button>
               </nav>
             </SheetContent>
           </Sheet>
