@@ -241,8 +241,8 @@ accent: '#F5A524' // رنگ تأکید کوچک (دکمه ثانویه/هایل�
         "tags": ["نوبت‌دهی", "زمان‌بندی"]
       },
       "furnace": {
-        "title": "اپلیکیشن بخش کوره – شرکت سیمَتن نیریز",
-        "text": "اپلیکیشن Full-stack برای بخش کورهٔ شرکت با بک‌اند ASP.NET، فرانت‌اند React و پایگاه‌داده SQL Server.",
+        "title": "وب‌سایت اعلام بار کارخانه سیمان خاکستری نیریز – بخش فروش",
+        "text": "وب‌سایت Full-stack برای اعلام بار بخش فروش کارخانه سیمان خاکستری نیریز با بک‌اند ASP.NET، فرانت‌اند React و پایگاه‌داده SQL Server.",
         "tags": ["ASP.NET", "React", "SQL Server"]
       }
     },
@@ -442,8 +442,8 @@ accent: '#F5A524' // رنگ تأکید کوچک (دکمه ثانویه/هایل�
         "tags": ["Appointments", "Scheduling"]
       },
       "furnace": {
-        "title": "Furnace Department App – Simatan Co., Neyriz",
-        "text": "A full-stack application for the company's furnace department, with an ASP.NET backend, React frontend and SQL Server database.",
+        "title": "Gray Cement Loading Announcement Website – Neyriz Cement Plant, Sales Department",
+        "text": "A full-stack website for announcing loading schedules for the sales department of Neyriz Gray Cement Plant, with an ASP.NET backend, React frontend and SQL Server database.",
         "tags": ["ASP.NET", "React", "SQL Server"]
       }
     },
@@ -692,7 +692,7 @@ model BlockedDate {                // تعطیلات یا روزهای غیرف�
 | `portfolio-pharma.svg` | نمونه‌کار موجودی دارو | قفسه، کپسول و علامت دارو |
 | `portfolio-freight.svg` | نمونه‌کار اعلام بار و بارنامه | کامیون و جاده |
 | `portfolio-appointment.svg` | نمونه‌کار نوبت‌دهی و صفحهٔ `/book` | تقویم و ساعت |
-| `portfolio-furnace.svg` | نمونه‌کار بخش کوره (سیمَتن) | کوره صنعتی، دودکش و پنل کنترل |
+| `portfolio-furnace.svg` | نمونه‌کار اعلام بار سیمان (نیریز) | کوره صنعتی، دودکش و پنل کنترل |
 | `about-shiraz.svg` | صفحهٔ دربارهٔ ما | طاق الهام‌گرفته از معماری ایرانی و افق |
 | `contact-map.svg` | صفحهٔ تماس | پین موقعیت (شیراز–تاچارا) |
 
@@ -763,7 +763,7 @@ model BlockedDate {                // تعطیلات یا روزهای غیرف�
 - در صورت وجود، آدرس کامل‌تر دفتر (خیابان/پلاک/کدپستی) و مختصات روی نقشه برای ریزتر شدن آدرس و JSON-LD.
 - ساعات کاری واقعی (متن نمونه: شنبه تا چهارشنبه ۹ تا ۱۷).
 - دامنه و آدرس نهایی سایت در `.env`.
-- تأیید اینکه نمونه‌کارها اجازهٔ نمایش عمومی دارند (نام مشتریان، از جمله «سیمَتن نیریز»، فقط با رضایت آن‌ها نمایش داده شود).
+- تأیید اینکه نمونه‌کارها اجازهٔ نمایش عمومی دارند (نام مشتریان، از جمله «کارخانه سیمان خاکستری نیریز»، فقط با رضایت آن‌ها نمایش داده شود).
 - اگر رضایت‌نامه یا لوگوی مشتری دارید، به بخش نمونه‌کارها اضافه کنید.
 - لوگوی نسخهٔ شفاف/سفید (SVG) برای فوتر و هدر تیره.
 - تصمیم دربارهٔ پیامک اطلاع‌رسانی رزرو (نیاز به سرویس‌دهندهٔ پیامک و API Key دارد).

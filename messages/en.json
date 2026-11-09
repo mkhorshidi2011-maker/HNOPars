@@ -146,8 +146,8 @@
         ]
       },
       "furnace": {
-        "title": "Furnace Department App – Simatan Co., Neyriz",
-        "text": "A full-stack application for the company's furnace department, with an ASP.NET backend, React frontend and SQL Server database.",
+        "title": "Gray Cement Loading Announcement Website – Neyriz Cement Plant, Sales Department",
+        "text": "A full-stack website for announcing loading schedules for the sales department of Neyriz Gray Cement Plant, with an ASP.NET backend, React frontend and SQL Server database.",
         "tags": [
           "ASP.NET",
           "React",
