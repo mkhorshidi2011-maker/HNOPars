@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fa" xml:lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>�������������� �������� �������� ������ ��������</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">body{font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.9;color:#0b1633;direction:rtl}
+h1,h2,h3{color:#1e3a80}h2{border-bottom:2px solid #d9e5f6;padding-bottom:.3rem;margin-top:2.2rem}
+pre{direction:ltr;text-align:left;background:#0b1633;color:#eef3fb;padding:1rem;border-radius:12px;overflow:auto}
+code{direction:ltr;unicode-bidi:embed;background:#eef3fb;padding:.1rem .35rem;border-radius:6px}pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{border:1px solid #dbe4f3;padding:.5rem .7rem;text-align:right}th{background:#eef3fb}
+blockquote{border-inline-start:4px solid #f5a524;margin:1rem 0;padding:.3rem 1rem;background:#fff8ea}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">�������������� �������� �������� ������ ��������</h1>
+</header>
+<div dir="rtl">
+
+<h1 id="راهنمای-کامل-ساخت-و-اجرای-وبسایت-هوشمند-نوآوران-افق-پارس">راهنمای
+کامل ساخت و اجرای وب‌سایت «هوشمند نوآوران افق پارس»</h1>
+<p>این پوشه یک <strong>بستهٔ شروع (Starter)</strong> کامل است: همهٔ
+فایل‌های لازم (تنظیمات، دیتابیس، APIها، صفحات، کامپوننت‌های shadcn،
+تصاویر، متن‌های فارسی/انگلیسی، رزرو مشاوره) به‌علاوهٔ راهنمای گام‌به‌گام.</p>
+<blockquote>
+<p><strong>صادقانه بدانید:</strong> این فایل‌ها در محیط من اجرا و build
+نشده‌اند (امکان نصب کامل shadcn و Next در اینجا نبود). کد با دقت و مطابق
+مستندات نوشته شده، اما در اولین <code>npm run build</code> ممکن است چند
+خطای کوچک (تایپ، import یا اختلاف نسخه) ببینید. بخش «عیب‌یابی» و روش Vibe
+Coding همین‌جا برای رفع سریع آن‌هاست.</p>
+</blockquote>
+<h2 id="فهرست">فهرست</h2>
+<ol type="1">
+<li><a href="#۱-آنچه-در-این-بسته-هست-و-آنچه-نیست">آنچه در این بسته هست و
+آنچه نیست</a></li>
+<li><a href="#۲-پیشنیازها">پیش‌نیازها</a></li>
+<li><a href="#۳-گام-۱--ساخت-پروژه">گام ۱ – ساخت پروژهٔ Next.js</a></li>
+<li><a href="#۴-گام-۲--نصب-کتابخانهها-و-shadcn">گام ۲ – نصب کتابخانه‌ها و
+shadcn</a></li>
+<li><a href="#۵-گام-۳--کپی-فایلهای-این-بسته">گام ۳ – کپی فایل‌های این
+بسته</a></li>
+<li><a href="#۶-گام-۴--دیتابیس">گام ۴ – دیتابیس PostgreSQL</a></li>
+<li><a href="#۷-گام-۵--اجرا-و-تست">گام ۵ – اجرا و تست</a></li>
+<li><a href="#۸-ساختار-فایلها">ساختار فایل‌ها</a></li>
+<li><a href="#۹-نحوه-کار-بخشهای-مهم">نحوهٔ کار بخش‌های مهم</a></li>
+<li><a href="#۱۰-سفارشیسازی">سفارشی‌سازی</a></li>
+<li><a href="#۱۱-روش-vibe-coding">روش Vibe Coding با حافظهٔ
+پروژه</a></li>
+<li><a href="#۱۲-استقرار">استقرار روی سرور</a></li>
+<li><a href="#۱۳-عیبیابی-رایج">عیب‌یابی رایج</a></li>
+<li><a href="#۱۴-چکلیست-قبل-از-انتشار">چک‌لیست قبل از انتشار</a></li>
+</ol>
+<hr />
+<h2 id="۱-آنچه-در-این-بسته-هست-و-آنچه-نیست">۱. آنچه در این بسته هست و
+آنچه نیست</h2>
+<p><strong>هست:</strong></p>
+<ul>
+<li>سایت دوزبانه فارسی (پیش‌فرض، RTL) / انگلیسی با
+<code>next-intl</code></li>
+<li>۵ صفحهٔ اصلی + صفحهٔ <strong>رزرو مشاوره</strong>
+(<code>/book</code>)</li>
+<li>متن کامل فارسی و انگلیسی (<code>messages/fa.json</code>,
+<code>en.json</code>) بر اساس رزومهٔ مدیرعامل</li>
+<li>رابط کاربری با <strong>shadcn/ui</strong> (تم برند آبی، حالت
+روشن/تیره در CSS)</li>
+<li>۱۱ تصویر SVG هماهنگ با برند + لوگو + OG image + آیکن سایت</li>
+<li>فرم تماس + API (honeypot، rate limit، ذخیره در Postgres، ایمیل
+اختیاری)</li>
+<li>رزرو مشاوره: ساعت‌های خالی، جلوگیری از رزرو دوبل، کد پیگیری، فایل
+تقویم <code>.ics</code></li>
+<li>سئو: metadata، sitemap، robots، JSON-LD، hreflang</li>
+<li>Docker (توسعه و استقرار)، فایل‌های حافظهٔ Vibe Coding
+(<code>CLAUDE.md</code>, <code>docs/PROGRESS.md</code>)</li>
+<li>تلفن 09229261972 و آدرس «شیراز، تاچارا»</li>
+</ul>
+<p><strong>نیست (باید بعداً اضافه شود):</strong></p>
+<ul>
+<li><strong>پنل <code>/admin</code></strong>: فعلاً رزروها و پیام‌ها را از
+دیتابیس می‌بینید (با <code>npx prisma studio</code>). پنل ادمین فاز بعدی
+است (پرامپتش در بخش ۱۱).</li>
+<li><strong>تقویم شمسی</strong>: انتخاب تاریخ با تقویم میلادی shadcn است
+ولی تاریخ انتخاب‌شده به‌صورت <strong>شمسی</strong> نمایش داده می‌شود. برای
+تقویم کاملاً شمسی از نمای Persian نسخهٔ ۹ <code>react-day-picker</code>
+استفاده کنید (پرامپت در بخش ۱۱).</li>
+<li><strong>پیامک</strong> اطلاع‌رسانی (نیاز به سرویس‌دهندهٔ پیامک).</li>
+<li>عکس‌های واقعی (فعلاً تصاویر برداری).</li>
+</ul>
+<hr />
+<h2 id="۲-پیشنیازها">۲. پیش‌نیازها</h2>
+<table>
+<thead>
+<tr class="header">
+<th>ابزار</th>
+<th>نسخه</th>
+<th>نکته</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Node.js</td>
+<td>20 یا بالاتر (پیشنهاد 22)</td>
+<td><code>node -v</code></td>
+</tr>
+<tr class="even">
+<td>npm</td>
+<td>همراه Node</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Docker Desktop</td>
+<td>هر نسخهٔ جدید</td>
+<td>برای PostgreSQL</td>
+</tr>
+<tr class="even">
+<td>Git</td>
+<td></td>
+<td><code>git --version</code></td>
+</tr>
+<tr class="odd">
+<td>ابزار Vibe Coding</td>
+<td>Cursor یا Claude Code یا Windsurf</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="۳-گام-۱--ساخت-پروژه">۳. گام ۱ – ساخت پروژه</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> create-next-app@latest ofogh-pars <span class="at">--typescript</span> <span class="at">--tailwind</span> <span class="at">--eslint</span> <span class="at">--app</span> <span class="at">--src-dir</span> <span class="at">--import-alias</span> <span class="st">&quot;@/*&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ofogh-pars</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init <span class="kw">&amp;&amp;</span> <span class="fu">git</span> add <span class="at">-A</span> <span class="kw">&amp;&amp;</span> <span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;chore: init&quot;</span></span></code></pre></div>
+<blockquote>
+<p>هنگام پرسش‌ها: TypeScript بله، ESLint بله، Tailwind بله،
+<code>src/</code> بله، App Router بله، alias بله (<code>@/*</code>).</p>
+</blockquote>
+<hr />
+<h2 id="۴-گام-۲--نصب-کتابخانهها-و-shadcn">۴. گام ۲ – نصب کتابخانه‌ها و
+shadcn</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># کتابخانه‌های اصلی</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> i next-intl lucide-react react-hook-form zod @hookform/resolvers nodemailer next-themes</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> i prisma@6 @prisma/client@6</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> i <span class="at">-D</span> tsx @types/nodemailer</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># shadcn/ui</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> shadcn@latest init</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   Base color: Neutral (بعداً با globals.css ما جایگزین می‌شود)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   CSS variables: Yes</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> shadcn@latest add button card input textarea label select radio-group checkbox <span class="dt">\</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  badge tabs dialog sheet dropdown-menu accordion calendar popover form sonner <span class="dt">\</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  separator avatar skeleton toggle-group table tooltip scroll-area navigation-menu</span></code></pre></div>
+<blockquote>
+<p>اگر <code>form</code> در نسخهٔ shadcn شما موجود نبود، کامپوننت
+<code>field</code> را اضافه کنید و <code>contact-form.tsx</code> را از
+ابزار Vibe Coding بخواهید با آن بازنویسی کند.</p>
+</blockquote>
+<p>در <code>package.json</code> این دو قسمت را اضافه کنید:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;scripts&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;db:up&quot;</span><span class="fu">:</span> <span class="st">&quot;docker compose up -d&quot;</span><span class="fu">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;db:migrate&quot;</span><span class="fu">:</span> <span class="st">&quot;prisma migrate dev&quot;</span><span class="fu">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;db:seed&quot;</span><span class="fu">:</span> <span class="st">&quot;prisma db seed&quot;</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;db:studio&quot;</span><span class="fu">:</span> <span class="st">&quot;prisma studio&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;prisma&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;seed&quot;</span><span class="fu">:</span> <span class="st">&quot;tsx prisma/seed.ts&quot;</span> <span class="fu">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<hr />
+<h2 id="۵-گام-۳--کپی-فایلهای-این-بسته">۵. گام ۳ – کپی فایل‌های این
+بسته</h2>
+<p>محتوای این پوشه را روی پروژه کپی کنید (جایگزینی فایل‌های موجود
+<strong>بله</strong>):</p>
+<table>
+<thead>
+<tr class="header">
+<th>از این بسته</th>
+<th>به پروژه</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>src/</code></td>
+<td><code>src/</code> (شامل <code>globals.css</code>، کامپوننت‌ها، صفحات،
+API، lib)</td>
+</tr>
+<tr class="even">
+<td><code>messages/</code></td>
+<td><code>messages/</code> (ریشهٔ پروژه)</td>
+</tr>
+<tr class="odd">
+<td><code>prisma/</code></td>
+<td><code>prisma/</code></td>
+</tr>
+<tr class="even">
+<td><code>public/images/</code></td>
+<td><code>public/images/</code></td>
+</tr>
+<tr class="odd">
+<td><code>next.config.ts</code>, <code>docker-compose.yml</code>,
+<code>docker-compose.prod.yml</code>, <code>Dockerfile</code>,
+<code>.gitignore</code></td>
+<td>ریشهٔ پروژه</td>
+</tr>
+<tr class="even">
+<td><code>.env.example</code></td>
+<td>به نام <code>.env</code> کپی و ویرایش شود</td>
+</tr>
+<tr class="odd">
+<td><code>CLAUDE.md</code>, <code>PROJECT_BRIEF.md</code>,
+<code>docs/</code></td>
+<td>ریشهٔ پروژه</td>
+</tr>
+</tbody>
+</table>
+<p>نکته‌ها:</p>
+<ul>
+<li>فایل‌های <code>src/components/ui/*</code> را <strong>خود
+shadcn</strong> ساخته است؛ پوشهٔ <code>ui</code> در این بسته نیست و نباید
+آن را بازنویسی کنید.</li>
+<li>اگر create-next-app فایل <code>src/app/page.tsx</code> و
+<code>src/app/layout.tsx</code> ساخته، <strong>حذفشان کنید</strong>
+(صفحات ما زیر <code>src/app/[locale]/</code> هستند).</li>
+<li>اگر نسخهٔ Next شما 16 به بعد است و هشدار middleware دیدید،
+<code>src/middleware.ts</code> را به <code>src/proxy.ts</code> تغییر نام
+دهید.</li>
+</ul>
+<hr />
+<h2 id="۶-گام-۴--دیتابیس">۶. گام ۴ – دیتابیس</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.example .env         <span class="co"># سپس مقادیر را بررسی کنید</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run db:up                <span class="co"># اجرای PostgreSQL با Docker</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> prisma generate</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> prisma migrate dev <span class="at">--name</span> init</span></code></pre></div>
+<p><strong>ایندکس ضد رزرو دوبل (فقط یک‌بار):</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose exec <span class="at">-T</span> db psql <span class="at">-U</span> ofoghpars <span class="at">-d</span> ofoghpars <span class="op">&lt;</span> prisma/partial-index.sql</span></code></pre></div>
+<p><strong>ساعات کاری (شنبه تا چهارشنبه، ۹ تا ۱۷):</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run db:seed</span></code></pre></div>
+<hr />
+<h2 id="۷-گام-۵--اجرا-و-تست">۷. گام ۵ – اجرا و تست</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span></code></pre></div>
+<p>باز کنید: <code>http://localhost:3000</code> (فارسی) و
+<code>http://localhost:3000/en</code> (انگلیسی).</p>
+<p><strong>تست دستی:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>صفحهٔ اصلی فارسی RTL است و انگلیسی
+LTR</label></li>
+<li><label><input type="checkbox"></input>سوییچ زبان همان صفحه را در زبان دیگر
+باز می‌کند</label></li>
+<li><label><input type="checkbox"></input>منوی موبایل (عرض کم مرورگر) از سمت
+راست باز می‌شود</label></li>
+<li><label><input type="checkbox"></input>فرم تماس: ارسال → پیام موفقیت →
+رکورد در <code>npx prisma studio</code> (جدول
+ContactMessage)</label></li>
+<li><label><input type="checkbox"></input><code>/book</code>: انتخاب نوع →
+تاریخ (شنبه تا چهارشنبه ساعت دارد، جمعه و پنج‌شنبه ندارد) → ساعت →
+اطلاعات → کد پیگیری</label></li>
+<li><label><input type="checkbox"></input>رزرو دوبارهٔ همان ساعت پیام «این زمان
+رزرو شد» می‌دهد</label></li>
+<li><label><input type="checkbox"></input>دانلود فایل <code>.ics</code> کار
+می‌کند</label></li>
+<li><label><input type="checkbox"></input><code>npm run lint</code> و
+<code>npm run build</code> بدون خطا</label></li>
+</ul>
+<hr />
+<h2 id="۸-ساختار-فایلها">۸. ساختار فایل‌ها</h2>
+<pre><code>ofogh-pars/
+├─ README.md                      ← همین راهنما
+├─ PROJECT_BRIEF.md               ← بریف کامل نیازمندی‌ها (برای ابزار هوش مصنوعی)
+├─ CLAUDE.md                      ← قوانین ثابت و حافظهٔ ابزار Vibe Coding
+├─ docs/{PROGRESS.md, UI_TEMPLATE.md}
+├─ docker-compose.yml             ← PostgreSQL برای توسعه
+├─ docker-compose.prod.yml, Dockerfile   ← استقرار
+├─ .env.example                   ← نمونهٔ تنظیمات
+├─ next.config.ts
+├─ messages/{fa,en}.json          ← همهٔ متن‌های سایت
+├─ prisma/{schema.prisma, seed.ts, partial-index.sql}
+├─ public/images/                 ← logo.png, og.png, 11 تصویر SVG
+└─ src/
+   ├─ middleware.ts               ← مسیریابی زبان
+   ├─ i18n/{routing.ts, request.ts}
+   ├─ app/
+   │  ├─ globals.css              ← تم برند + توکن‌های shadcn
+   │  ├─ icon.png, sitemap.ts, robots.ts
+   │  ├─ [locale]/{layout, page}.tsx, about/, services/, portfolio/, contact/, book/
+   │  └─ api/{contact, booking, booking/slots, booking/[code], booking/[code]/ics}
+   ├─ components/
+   │  ├─ layout/{site-header, site-footer}.tsx
+   │  ├─ sections/{hero, services-grid, stats, portfolio-grid, cta-banner}.tsx
+   │  ├─ booking/booking-wizard.tsx
+   │  └─ contact-form.tsx
+   ├─ data/{services, portfolio}.ts
+   └─ lib/{prisma, validators, booking, rate-limit, mail}.ts</code></pre>
+<hr />
+<h2 id="۹-نحوهٔ-کار-بخشهای-مهم">۹. نحوهٔ کار بخش‌های مهم</h2>
+<p><strong>دوزبانگی.</strong> فارسی بدون پیشوند (<code>/about</code>) و
+انگلیسی با <code>/en</code> (<code>/en/about</code>).
+<code>layout.tsx</code> برای هر زبان <code>lang</code> و
+<code>dir</code> را درست می‌گذارد. هیچ متنی هاردکد نیست؛ همه از
+<code>messages/*.json</code>.</p>
+<p><strong>رزرو مشاوره.</strong></p>
+<ul>
+<li><code>GET /api/booking/slots?date=YYYY-MM-DD</code>: ساعت‌های آن روز
+را از جدول <code>AvailabilityRule</code> می‌سازد (اسلات ۳۰ دقیقه‌ای + ۱۰
+دقیقه فاصله)، روزهای تعطیل (<code>BlockedDate</code>) و ساعت‌های پر را
+حذف می‌کند؛ حداقل ۲ ساعت قبل و حداکثر ۶۰ روز بعد.</li>
+<li><code>POST /api/booking</code>: ورودی را با Zod می‌سنجد، دوباره خالی
+بودن اسلات را در سرور چک می‌کند، رزرو را ذخیره می‌کند و کد پیگیری (مثل
+<code>OP-7K3Q9X</code>) برمی‌گرداند. اگر دو نفر هم‌زمان یک ساعت را بزنند،
+ایندکس یکتای دیتابیس یکی را رد می‌کند (خطای 409).</li>
+<li>زمان‌ها همیشه به وقت تهران (UTC+03:30) محاسبه و در دیتابیس UTC ذخیره
+می‌شوند.</li>
+<li><code>GET /api/booking/[code]</code> فقط وضعیت و زمان را برمی‌گرداند
+(بدون اطلاعات شخصی).</li>
+</ul>
+<p><strong>امنیت فرم‌ها.</strong> فیلد مخفی honeypot، محدودیت ۵ درخواست
+در ۱۰ دقیقه برای هر IP (IP به‌صورت هش ذخیره می‌شود)، اعتبارسنجی سمت سرور،
+هدرهای امنیتی در <code>next.config.ts</code>.</p>
+<p><strong>تغییر وضعیت رزرو (تا ساخت پنل ادمین).</strong>
+<code>npx prisma studio</code> ← جدول <code>Consultation</code> ← ستون
+<code>status</code> را از <code>PENDING</code> به <code>CONFIRMED</code>
+یا <code>CANCELLED</code> تغییر دهید. رزرو <code>CANCELLED</code> ساعتش
+دوباره آزاد می‌شود.</p>
+<p><strong>ایمیل.</strong> اگر <code>SMTP_*</code> را در
+<code>.env</code> پر کنید، با هر پیام/رزرو ایمیل به
+<code>CONTACT_NOTIFY_EMAIL</code> می‌رسد؛ اگر خالی باشد همه‌چیز بدون ایمیل
+کار می‌کند.</p>
+<hr />
+<h2 id="۱۰-سفارشیسازی">۱۰. سفارشی‌سازی</h2>
+<table>
+<thead>
+<tr class="header">
+<th>می‌خواهم…</th>
+<th>کجا</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>متن‌ها را عوض کنم</td>
+<td><code>messages/fa.json</code> و <code>messages/en.json</code></td>
+</tr>
+<tr class="even">
+<td>رنگ برند</td>
+<td><code>src/app/globals.css</code> (<code>--primary</code> و
+<code>--brand-*</code>)</td>
+</tr>
+<tr class="odd">
+<td>ساعات کاری</td>
+<td><code>prisma/seed.ts</code> یا جدول <code>AvailabilityRule</code> در
+Prisma Studio، سپس <code>npm run db:seed</code></td>
+</tr>
+<tr class="even">
+<td>روز تعطیل</td>
+<td>یک ردیف در جدول <code>BlockedDate</code></td>
+</tr>
+<tr class="odd">
+<td>طول جلسه و فاصله</td>
+<td><code>SLOT_MIN</code> و <code>GAP_MIN</code> در
+<code>src/lib/booking.ts</code></td>
+</tr>
+<tr class="even">
+<td>تلفن/آدرس</td>
+<td><code>messages/*.json</code> (بخش contact.info)،
+<code>site-footer.tsx</code>, <code>cta-banner.tsx</code>,
+<code>contact/page.tsx</code>, JSON-LD در
+<code>[locale]/layout.tsx</code></td>
+</tr>
+<tr class="odd">
+<td>نمونه‌کار جدید</td>
+<td>یک آیتم در <code>src/data/portfolio.ts</code> + متنش در
+<code>messages/*.json</code></td>
+</tr>
+<tr class="even">
+<td>تصاویر</td>
+<td><code>public/images/</code> (عکس واقعی را با همان نام جایگزین
+کنید)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="۱۱-روش-vibe-coding">۱۱. روش Vibe Coding</h2>
+<p>۱. پروژه را در Cursor / Claude Code باز کنید. <code>CLAUDE.md</code>
+در ریشه است و ابزار آن را می‌خواند. ۲. اولین پرامپت:</p>
+<blockquote>
+<p><code>CLAUDE.md</code> و <code>PROJECT_BRIEF.md</code> و
+<code>docs/PROGRESS.md</code> را بخوان. سپس <code>npm run lint</code> و
+<code>npm run build</code> را اجرا کن، همهٔ خطاها را رفع کن و نتیجه را در
+<code>docs/PROGRESS.md</code> ثبت کن.</p>
+</blockquote>
+<p>۳. پرامپت‌های بعدی (هر کدام جدا، با commit بعد از هر یک):</p>
+<ul>
+<li><strong>مرور RTL:</strong> «همهٔ فایل‌های
+<code>src/components/ui/*</code> را بررسی کن و کلاس‌های
+<code>left/right/ml/mr/pl/pr/text-left/text-right</code> را با معادل
+منطقی (<code>start/end/ms/me/ps/pe</code>) جایگزین کن. بعد صفحات را در
+حالت RTL تست کن.»</li>
+<li><strong>تقویم شمسی:</strong> «در <code>BookingWizard</code> به‌جای
+<code>Calendar</code> میلادی، برای locale فارسی تقویم شمسی با
+<code>react-day-picker/persian</code> بگذار و تاریخ را همچنان به‌صورت
+YYYY-MM-DD میلادی به API بفرست.»</li>
+<li><strong>پنل ادمین:</strong> «صفحهٔ <code>/admin</code> بساز با احراز
+هویت ساده (ایمیل/رمز هش‌شده در <code>.env</code>)، جدول رزروها و پیام‌ها
+با shadcn <code>Table</code>، تغییر وضعیت با <code>DropdownMenu</code>،
+و مدیریت ساعات کاری و روزهای تعطیل.»</li>
+<li><strong>پیامک:</strong> «ارسال پیامک تأیید رزرو را با سرویس‌دهندهٔ
+[نام سرویس] اضافه کن؛ کلید API در <code>.env</code>.»</li>
+<li><strong>عکس واقعی:</strong> «تصاویر SVG را با عکس‌های بهینه‌شدهٔ WebP
+جایگزین کن.»</li>
+<li><strong>سئو:</strong> «برای هر صفحه <code>generateMetadata</code>
+اختصاصی (عنوان و توضیح فارسی/انگلیسی) اضافه کن و Lighthouse را بالای ۹۰
+ببر.»</li>
+</ul>
+<p>۴. قبل از بستن هر جلسه: «<code>docs/PROGRESS.md</code> را به‌روز کن و
+بنویس جلسهٔ بعد از کجا شروع کنیم.» جلسهٔ بعد فقط بگویید:
+«<code>CLAUDE.md</code> را بخوان و از «کار بعدی» ادامه بده.»</p>
+<hr />
+<h2 id="۱۲-استقرار">۱۲. استقرار</h2>
+<p><strong>گزینهٔ الف – سرور (VPS) با Docker (پیشنهادی، مستقل از سرویس
+خارجی):</strong></p>
+<ol type="1">
+<li>روی سرور Docker نصب کنید و پروژه را با Git بیاورید.</li>
+<li>در <code>.env</code> مقدار <code>DB_PASSWORD</code> و
+<code>NEXT_PUBLIC_SITE_URL</code> (دامنهٔ واقعی با https) و
+<code>IP_HASH_SALT</code> را بگذارید.</li>
+<li><code>docker compose -f docker-compose.prod.yml up -d --build</code></li>
+<li>ایندکس ضد رزرو دوبل را روی دیتابیس تولید هم اجرا کنید:
+<code>docker compose -f docker-compose.prod.yml exec -T db psql -U ofoghpars -d ofoghpars &lt; prisma/partial-index.sql</code></li>
+<li><code>seed</code> را یک‌بار اجرا کنید (از کامپیوتر خودتان با
+<code>DATABASE_URL</code> سرور، یا دستی ردیف‌های
+<code>AvailabilityRule</code> را بسازید).</li>
+<li>Nginx یا Caddy را جلوی پورت 3000 بگذارید و گواهی SSL (Let&#39;s Encrypt)
+بگیرید.</li>
+</ol>
+<p><strong>گزینهٔ ب – Vercel + دیتابیس ابری:</strong> پروژه را به Vercel
+وصل کنید و <code>DATABASE_URL</code> یک Postgres ابری (Neon/Supabase)
+بدهید. توجه: محدودیت‌های دسترسی از ایران و تحریم‌ها را قبل از انتخاب بررسی
+کنید؛ برای مخاطب ایرانی، سرور داخل ایران یا اروپا معمولاً مطمئن‌تر
+است.</p>
+<blockquote>
+<p><code>Dockerfile</code> و <code>docker-compose.prod.yml</code> آزمایش
+نشده‌اند؛ اگر در build خطا دادند، خروجی خطا را به ابزار Vibe Coding
+بدهید.</p>
+</blockquote>
+<hr />
+<h2 id="۱۳-عیبیابی-رایج">۱۳. عیب‌یابی رایج</h2>
+<table>
+<thead>
+<tr class="header">
+<th>مشکل</th>
+<th>راه‌حل</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Cannot find module &#39;@/components/ui/...&#39;</code></td>
+<td>آن کامپوننت shadcn نصب نشده؛
+<code>npx shadcn@latest add &lt;name&gt;</code></td>
+</tr>
+<tr class="even">
+<td>خطای <code>Can&#39;t reach database</code></td>
+<td><code>npm run db:up</code> اجرا شده؟ <code>DATABASE_URL</code> در
+<code>.env</code> درست است؟</td>
+</tr>
+<tr class="odd">
+<td><code>Table does not exist</code></td>
+<td><code>npx prisma migrate dev --name init</code> را اجرا کنید</td>
+</tr>
+<tr class="even">
+<td>هیچ ساعتی در <code>/book</code> نیست</td>
+<td><code>npm run db:seed</code> اجرا نشده یا روز انتخابی جمعه/پنج‌شنبه
+است</td>
+</tr>
+<tr class="odd">
+<td>رزرو دوبل ممکن است</td>
+<td><code>prisma/partial-index.sql</code> اجرا نشده</td>
+</tr>
+<tr class="even">
+<td>متن به‌جای ترجمه، کلید نشان می‌دهد
+(<code>services.bookCta</code>)</td>
+<td>کلید در <code>messages/*.json</code> نیست</td>
+</tr>
+<tr class="odd">
+<td>منوها در RTL جابه‌جا شده‌اند</td>
+<td>پرامپت «مرور RTL» در بخش ۱۱</td>
+</tr>
+<tr class="even">
+<td><code>middleware</code> deprecated در Next 16</td>
+<td>تغییر نام به <code>proxy.ts</code></td>
+</tr>
+<tr class="odd">
+<td>تصویر SVG نمایش داده نمی‌شود</td>
+<td><code>next.config.ts</code> را بررسی کنید
+(<code>dangerouslyAllowSVG</code>) یا از <code>&lt;img&gt;</code> ساده
+استفاده کنید</td>
+</tr>
+<tr class="even">
+<td>فونت‌ها لود نمی‌شوند</td>
+<td><code>next/font/google</code> هنگام build به اینترنت نیاز دارد؛ یا
+فایل Vazirmatn را محلی با <code>next/font/local</code> بگذارید</td>
+</tr>
+<tr class="odd">
+<td><code>form</code> در shadcn نیست</td>
+<td>کامپوننت <code>field</code> را جایگزین کنید (بخش ۴)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="۱۴-چکلیست-قبل-از-انتشار">۱۴. چک‌لیست قبل از انتشار</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input><code>.env</code> تولید پر شده و در
+Git نیست</label></li>
+<li><label><input type="checkbox"></input>دامنه و
+<code>NEXT_PUBLIC_SITE_URL</code> درست است</label></li>
+<li><label><input type="checkbox"></input>متن‌ها را یک بار کامل خوانده و ویرایش
+کرده‌اید (فارسی و انگلیسی)</label></li>
+<li><label><input type="checkbox"></input>اجازهٔ نمایش نام مشتریان (مثلاً «سیمَتن
+نیریز») را گرفته‌اید</label></li>
+<li><label><input type="checkbox"></input>آدرس کامل‌تر دفتر (در صورت تمایل)
+اضافه شده</label></li>
+<li><label><input type="checkbox"></input>ایندکس ضد رزرو دوبل و seed ساعات
+کاری روی دیتابیس تولید اجرا شده</label></li>
+<li><label><input type="checkbox"></input>ایمیل اطلاع‌رسانی (SMTP) تست
+شده</label></li>
+<li><label><input type="checkbox"></input><code>npm run build</code> و
+Lighthouse (بالای ۹۰) موفق</label></li>
+<li><label><input type="checkbox"></input>گواهی SSL فعال، پشتیبان‌گیری منظم از
+Postgres برقرار است</label></li>
+<li><label><input type="checkbox"></input>پنل ادمین یا روش مدیریت رزروها مشخص
+است</label></li>
+</ul>
+</div>
+</body>
+</html>

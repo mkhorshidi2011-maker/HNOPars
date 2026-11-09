@@ -1,0 +1,20 @@
+# استقرار: docker compose -f docker-compose.prod.yml up -d --build
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ofoghpars
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ofoghpars
+    volumes: [pgdata:/var/lib/postgresql/data]
+  web:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://ofoghpars:${DB_PASSWORD}@db:5432/ofoghpars?schema=public
+    depends_on: [db]
+    ports: ["3000:3000"]
+volumes:
+  pgdata:

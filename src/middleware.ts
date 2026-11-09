@@ -1,0 +1,8 @@
+// اگر از Next.js 16 به بعد استفاده می‌کنید و هشدار deprecated دیدید،
+// این فایل را به src/proxy.ts تغییر نام دهید (محتوا یکی است).
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
+
+export default createMiddleware(routing);
+
+export const config = { matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"] };

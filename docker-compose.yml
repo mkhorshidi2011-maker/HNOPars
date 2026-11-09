@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ofoghpars
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: ofoghpars
+    ports: ["5433:5432"]          # <-- host port changed to 5433
+    volumes: [pgdata:/var/lib/postgresql/data]
+volumes:
+  pgdata:

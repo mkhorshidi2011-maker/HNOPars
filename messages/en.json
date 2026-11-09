@@ -1,0 +1,326 @@
+{
+  "meta": {
+    "siteName": "Hooshmand Noavaran Ofogh Pars",
+    "defaultTitle": "Hooshmand Noavaran Ofogh Pars | Software, Infrastructure & AI",
+    "defaultDescription": "Hooshmand Noavaran Ofogh Pars, a private joint-stock company based in Shiraz, Iran: enterprise software development, IT infrastructure and network management, data science and AI, with 20+ years of experience."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About Us",
+    "contact": "Contact",
+    "cta": "Book a Consultation",
+    "book": "Book a Consultation"
+  },
+  "hero": {
+    "badge": "20+ years of professional experience",
+    "title": "Smart technology for your business growth",
+    "subtitle": "At Ofogh Pars we design and deliver enterprise software, reliable infrastructure, and data-driven and AI solutions for individuals and organizations.",
+    "primaryCta": "Start a Project",
+    "secondaryCta": "View Our Work"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "From idea to delivery and support, we are by your side.",
+    "items": {
+      "software": {
+        "title": "Software Development",
+        "short": "Web and enterprise applications tailored to your business processes.",
+        "description": "From payroll and accounting to inventory, transportation and appointment systems, we build software that fits your workflow, scales with you, and runs on proven databases.",
+        "features": [
+          "Web applications with ASP.NET, React and Next.js",
+          "Database design and optimization (SQL Server, Oracle, PostgreSQL)",
+          "Process automation with VBA and scripting",
+          "Integration with existing systems and legacy migration",
+          "Rapid delivery through AI-assisted development"
+        ]
+      },
+      "infrastructure": {
+        "title": "Infrastructure & Network Management",
+        "short": "Setup, administration and support of networks and servers for stable, secure operations.",
+        "description": "With two decades of hands-on experience running the IT infrastructure of a large organizational branch, we provide network and server management focused on reliability and security.",
+        "features": [
+          "Windows Server and Active Directory administration",
+          "Network design, routing and DHCP",
+          "IIS management and virtualization",
+          "Enterprise antivirus and security management",
+          "Hardware and software troubleshooting and support"
+        ]
+      },
+      "data": {
+        "title": "Data Science & AI",
+        "short": "Data analysis, executive dashboards and AI solutions for better decisions.",
+        "description": "We turn your organization's data into actionable insight, from analysis and visualization to modeling and intelligent automation.",
+        "features": [
+          "Data analysis with Python, R and SAS",
+          "Dashboards with Tableau and advanced Excel",
+          "Data architecture with SQL Server, Oracle and MongoDB",
+          "AI solutions and intelligent automation"
+        ]
+      }
+    },
+    "processTitle": "How We Work",
+    "process": [
+      {
+        "title": "Discovery",
+        "text": "A consultation and careful analysis of your needs and processes."
+      },
+      {
+        "title": "Solution Design",
+        "text": "A clear architecture and technical proposal."
+      },
+      {
+        "title": "Build & Deliver",
+        "text": "Incremental development with continuous feedback."
+      },
+      {
+        "title": "Support",
+        "text": "Training, handover and post-launch support."
+      }
+    ],
+    "bookCta": "Book a consultation"
+  },
+  "stats": {
+    "years": {
+      "value": "20+",
+      "label": "Years of professional experience"
+    },
+    "users": {
+      "value": "70+",
+      "label": "Users supported daily on managed infrastructure"
+    },
+    "systems": {
+      "value": "5",
+      "label": "Core system categories developed"
+    },
+    "certs": {
+      "value": "CCNA",
+      "label": "plus Network+ and a Data Science Architect program"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A selection of systems we have designed and developed.",
+    "filters": {
+      "all": "All",
+      "software": "Software",
+      "transport": "Transportation",
+      "pharma": "Pharma & Health",
+      "finance": "Finance & Payroll"
+    },
+    "items": {
+      "payroll": {
+        "title": "Payroll & Accounting System",
+        "text": "Payroll, wage calculation and financial reporting software for companies, built as a networked multi-user system.",
+        "tags": [
+          "Payroll",
+          "Accounting",
+          "Reporting"
+        ]
+      },
+      "pharma": {
+        "title": "Pharmaceutical Inventory Management",
+        "text": "Warehouse and stock management for pharmaceutical goods with inbound/outbound control, history and analytical reports.",
+        "tags": [
+          "Inventory",
+          "Pharma",
+          "Analytics"
+        ]
+      },
+      "freight": {
+        "title": "Freight Announcement & Bill of Lading System",
+        "text": "Freight announcement, shipment management and bill-of-lading issuance for transportation companies in Shiraz and Marvdasht.",
+        "tags": [
+          "Transportation",
+          "Bill of Lading",
+          "Networked"
+        ]
+      },
+      "appointment": {
+        "title": "Appointment Scheduling System",
+        "text": "Scheduling software with capacity management and reminders.",
+        "tags": [
+          "Appointments",
+          "Scheduling"
+        ]
+      },
+      "furnace": {
+        "title": "Furnace Department App – Simatan Co., Neyriz",
+        "text": "A full-stack application for the company's furnace department, with an ASP.NET backend, React frontend and SQL Server database.",
+        "tags": [
+          "ASP.NET",
+          "React",
+          "SQL Server"
+        ]
+      }
+    },
+    "cta": "Have a similar project in mind?"
+  },
+  "about": {
+    "title": "About Ofogh Pars",
+    "storyTitle": "Our Story",
+    "story": "Hooshmand Noavaran Ofogh Pars was founded in Shiraz on more than two decades of hands-on experience in software development and IT infrastructure management. Our goal is simple: to make technology a dependable tool for businesses. From early networked transportation and payroll systems to today's web applications and data-driven solutions, our path has always been built on continuous learning and solving real customer problems.",
+    "ceoTitle": "Chief Executive Officer",
+    "ceoName": "Mohammad Khorshidi",
+    "ceoRole": "CEO & Founder",
+    "ceoBio": "Mohammad Khorshidi holds a B.Sc. in Mathematics (Computer Science major) from Ferdowsi University of Mashhad (graduated 1996). His professional career began in 1997 developing software for transportation companies, and since 2001 he has managed the IT infrastructure of a large organizational branch. Beyond full-stack development with C#, ASP.NET, React and Next.js, he holds CCNA and CompTIA Network+ certifications, completed the Data Science Architect program (IntelliPaat, 2025), and actively uses AI-assisted development (vibe coding) in his projects.",
+    "skillsTitle": "Key Skills",
+    "skills": [
+      "C#",
+      "Python",
+      "R",
+      "SAS",
+      "JavaScript",
+      "ASP.NET",
+      "React",
+      "Next.js",
+      "SQL Server",
+      "Oracle",
+      "PL/SQL",
+      "MongoDB",
+      "Tableau",
+      "Windows Server",
+      "Active Directory",
+      "Docker",
+      "Git"
+    ],
+    "valuesTitle": "Our Values",
+    "values": [
+      {
+        "title": "Trust & Transparency",
+        "text": "Clear communication, achievable promises and steady reporting."
+      },
+      {
+        "title": "Technical Quality",
+        "text": "Sound architecture, clean code and maintainable solutions."
+      },
+      {
+        "title": "Practical Innovation",
+        "text": "Modern technology, including AI, only where it creates real value."
+      },
+      {
+        "title": "Continuous Learning",
+        "text": "Staying current is how we keep growing."
+      }
+    ],
+    "timelineTitle": "Experience Timeline",
+    "timeline": [
+      {
+        "year": "1992–1996",
+        "text": "B.Sc. in Mathematics, Computer Science major, Ferdowsi University of Mashhad"
+      },
+      {
+        "year": "1997–1999",
+        "text": "Programmer of transportation and payroll systems (FoxPro and Novell NetWare)"
+      },
+      {
+        "year": "2001–Present",
+        "text": "IT infrastructure and network management for 70+ users; Windows Server, Active Directory and Oracle"
+      },
+      {
+        "year": "1997–Present",
+        "text": "Project-based software development for various companies"
+      },
+      {
+        "year": "2025",
+        "text": "Data Science Architect program (IntelliPaat) and expansion into AI"
+      }
+    ],
+    "legalTitle": "Company Information",
+    "legal": {
+      "name": "Hooshmand Noavaran Ofogh Pars",
+      "type": "Private Joint-Stock Company",
+      "regNo": "69759",
+      "city": "Shiraz"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Tell us about your project or need; we will get back to you shortly.",
+    "form": {
+      "customerType": "I am contacting as…",
+      "person": "An individual",
+      "organization": "An organization / company",
+      "name": "Full name",
+      "organizationName": "Organization name",
+      "email": "Email",
+      "phone": "Phone number",
+      "service": "Subject",
+      "serviceOptions": {
+        "software": "Software development",
+        "infrastructure": "Infrastructure & network",
+        "data": "Data science & AI",
+        "other": "Other"
+      },
+      "message": "Your message",
+      "submit": "Send Message",
+      "sending": "Sending…",
+      "success": "Your message was sent successfully. We will contact you soon.",
+      "error": "Sending failed. Please try again.",
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address"
+    },
+    "info": {
+      "addressLabel": "Address",
+      "address": "Tachara, Shiraz, Iran",
+      "phoneLabel": "Phone",
+      "phone": "+98 922 926 1972",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "hours": "Sat–Wed, 9:00–17:00"
+    }
+  },
+  "booking": {
+    "title": "Book a Consultation",
+    "subtitle": "Pick a time for a consultation and we will review your needs and propose the best solution.",
+    "steps": {
+      "type": "Consultation type",
+      "datetime": "Date & time",
+      "details": "Your details",
+      "done": "Confirmation"
+    },
+    "types": {
+      "software": "Software development consultation",
+      "infrastructure": "Infrastructure & network consultation",
+      "data": "Data science & AI consultation",
+      "general": "General consultation"
+    },
+    "mode": "Meeting format",
+    "modes": {
+      "phone": "Phone call",
+      "online": "Online (video)",
+      "inperson": "In person – Tachara, Shiraz"
+    },
+    "duration": "Session length: 30 minutes",
+    "pickDate": "Choose a date",
+    "pickTime": "Choose a time",
+    "noSlots": "No free slots on this day.",
+    "slotTaken": "This slot was just booked; please choose another time.",
+    "notes": "Notes (optional)",
+    "submit": "Confirm Booking",
+    "successTitle": "Your booking is confirmed",
+    "successText": "Your tracking code: {code}. We will contact you shortly to confirm.",
+    "statusLabel": "Track your booking",
+    "trackPlaceholder": "Enter tracking code",
+    "error": "Booking failed. Please try again.",
+    "next": "Next",
+    "back": "Back",
+    "addToCalendar": "Add to calendar",
+    "dateLabel": "Date",
+    "invalidPhone": "Enter a valid mobile number",
+    "namePh": "Full name",
+    "phoneHint": "We will call this number to confirm the time",
+    "newBooking": "New booking"
+  },
+  "cta": {
+    "title": "Ready when you are",
+    "text": "Share your need with us and we will propose the best solution.",
+    "button": "Contact Us"
+  },
+  "footer": {
+    "about": "Private Joint-Stock Company | Reg. No. 69759 | Shiraz",
+    "links": "Quick Links",
+    "rights": "All rights reserved."
+  }
+}

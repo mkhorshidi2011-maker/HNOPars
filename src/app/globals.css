@@ -1,26 +1,95 @@
 @import "tailwindcss";
+@import "../../node_modules/tw-animate-css/dist/tw-animate.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* فونت‌ها: در layout.tsx با next/font تعریف و روی body قرار دهید:
+   --font-vazirmatn (فارسی) و --font-inter (انگلیسی) */
 
 :root {
+  --radius: 1rem;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1633;
+  --card: #ffffff;
+  --card-foreground: #0b1633;
+  --popover: #ffffff;
+  --popover-foreground: #0b1633;
+  --primary: #1e3a80;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3fb;
+  --secondary-foreground: #182e66;
+  --muted: #f3f6fb;
+  --muted-foreground: #5b6b8c;
+  --accent: #f5a524;
+  --accent-foreground: #0b1633;
+  --destructive: #dc2626;
+  --border: #dbe4f3;
+  --input: #dbe4f3;
+  --ring: #2f5ba8;
+  --brand-50: #eef3fb; --brand-100: #d9e5f6; --brand-200: #b3caec;
+  --brand-300: #86a8db; --brand-400: #5580c6; --brand-500: #2f5ba8;
+  --brand-600: #1e3a80; --brand-700: #182e66; --brand-800: #12234d; --brand-900: #0b1633;
+}
+
+.dark {
+  --background: #0b1633;
+  --foreground: #eef3fb;
+  --card: #12234d;
+  --card-foreground: #eef3fb;
+  --popover: #12234d;
+  --popover-foreground: #eef3fb;
+  --primary: #5580c6;
+  --primary-foreground: #0b1633;
+  --secondary: #182e66;
+  --secondary-foreground: #eef3fb;
+  --muted: #12234d;
+  --muted-foreground: #9db3d9;
+  --accent: #f5a524;
+  --accent-foreground: #0b1633;
+  --destructive: #f87171;
+  --border: #243a73;
+  --input: #243a73;
+  --ring: #86a8db;
 }
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-50: var(--brand-50); --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200); --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400); --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600); --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800); --color-brand-900: var(--brand-900);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground antialiased; }
+  html[lang="fa"] body { font-family: var(--font-vazirmatn), system-ui, sans-serif; }
+  html[lang="en"] body { font-family: var(--font-inter), system-ui, sans-serif; }
+  h1, h2, h3 { @apply tracking-tight; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }

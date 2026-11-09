@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CustomerType {
+  PERSON
+  ORGANIZATION
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  DONE
+}
+
+enum MeetingMode {
+  PHONE
+  ONLINE
+  INPERSON
+}
+
+model ContactMessage {
+  id               String        @id @default(cuid())
+  customerType     CustomerType
+  name             String
+  organizationName String?
+  email            String
+  phone            String?
+  service          String
+  message          String
+  locale           String
+  status           MessageStatus @default(NEW)
+  ipHash           String?
+  createdAt        DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+model Consultation {
+  id               String        @id @default(cuid())
+  trackingCode     String        @unique
+  customerType     CustomerType
+  name             String
+  organizationName String?
+  email            String?
+  phone            String
+  topic            String
+  mode             MeetingMode
+  startsAt         DateTime
+  durationMin      Int           @default(30)
+  notes            String?
+  locale           String
+  status           BookingStatus @default(PENDING)
+  ipHash           String?
+  createdAt        DateTime      @default(now())
+
+  @@index([startsAt, status])
+}
+
+model AvailabilityRule {
+  id        Int     @id @default(autoincrement())
+  weekday   Int
+  startTime String
+  endTime   String
+  active    Boolean @default(true)
+}
+
+model BlockedDate {
+  id     Int      @id @default(autoincrement())
+  date   DateTime @unique
+  reason String?
+}
