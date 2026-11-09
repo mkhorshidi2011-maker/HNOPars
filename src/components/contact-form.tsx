@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,6 +33,19 @@ export function ContactForm() {
     defaultValues: { customerType: "PERSON", service: "software", name: "", email: "", phone: "", message: "", organizationName: "", website: "" },
   });
   const isOrg = useWatch({ control: form.control, name: "customerType" }) === "ORGANIZATION";
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then((r) => r.json())
+      .then((d) => {
+        const u = d.user as { name?: string; email?: string; phone?: string } | null;
+        if (!u) return;
+        if (!form.getValues("name") && u.name) form.setValue("name", u.name, { shouldDirty: false });
+        if (!form.getValues("email") && u.email) form.setValue("email", u.email, { shouldDirty: false });
+        if (!form.getValues("phone") && u.phone) form.setValue("phone", u.phone, { shouldDirty: false });
+      })
+      .catch(() => {});
+  }, [form]);
 
   async function onSubmit(values: Values) {
     const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...values, locale }) });

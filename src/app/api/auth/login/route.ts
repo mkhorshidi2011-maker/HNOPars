@@ -20,8 +20,8 @@ export async function POST(req: Request) {
   if (!user || !(await verifyPassword(d.password, user.passwordHash))) {
     return NextResponse.json({ error: "invalid_credentials" }, { status: 401 });
   }
-  const token = createSessionToken({ id: user.id, name: user.name, email: user.email });
-  const res = NextResponse.json({ ok: true, user: { name: user.name, email: user.email } });
+  const token = createSessionToken({ id: user.id, name: user.name, email: user.email, phone: user.phone });
+  const res = NextResponse.json({ ok: true, user: { name: user.name, email: user.email, phone: user.phone ?? "" } });
   res.cookies.set(sessionCookie(token));
   return res;
 }

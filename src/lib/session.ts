@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 export const SESSION_COOKIE = "ofogh_session";
 const MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 
-export type Session = { uid: string; email: string; name: string; exp: number };
+export type Session = { uid: string; email: string; name: string; phone: string | null; exp: number };
 
 function secret() {
   return process.env.AUTH_SECRET || "dev-insecure-secret-change-me";
@@ -14,8 +14,8 @@ function sign(payload: string) {
   return createHmac("sha256", secret()).update(payload).digest("base64url");
 }
 
-export function createSessionToken(user: { id: string; email: string; name: string }) {
-  const body: Session = { uid: user.id, email: user.email, name: user.name, exp: Date.now() + MAX_AGE * 1000 };
+export function createSessionToken(user: { id: string; email: string; name: string; phone?: string | null }) {
+  const body: Session = { uid: user.id, email: user.email, name: user.name, phone: user.phone ?? null, exp: Date.now() + MAX_AGE * 1000 };
   const payload = Buffer.from(JSON.stringify(body), "utf8").toString("base64url");
   return `${payload}.${sign(payload)}`;
 }

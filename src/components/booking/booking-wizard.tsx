@@ -40,6 +40,22 @@ export function BookingWizard({ initialTopic = "general" }: { initialTopic?: Top
   const maxDate = useMemo(() => new Date(today.getTime() + 60 * 86400000), [today]);
 
   useEffect(() => {
+    fetch("/api/auth/me")
+      .then((r) => r.json())
+      .then((d) => {
+        const u = d.user as { name?: string; email?: string; phone?: string } | null;
+        if (!u) return;
+        setForm((f) => ({
+          ...f,
+          name: f.name || u.name || "",
+          email: f.email || u.email || "",
+          phone: f.phone || u.phone || "",
+        }));
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
     if (!date) return;
     const controller = new AbortController();
     fetch(`/api/booking/slots?date=${toYmd(date)}`, { signal: controller.signal })

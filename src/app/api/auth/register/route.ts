@@ -20,10 +20,10 @@ export async function POST(req: Request) {
   try {
     const user = await prisma.user.create({
       data: { name: d.name, email, phone: d.phone || null, passwordHash: await hashPassword(d.password) },
-      select: { id: true, name: true, email: true },
+      select: { id: true, name: true, email: true, phone: true },
     });
     const token = createSessionToken(user);
-    const res = NextResponse.json({ ok: true, user: { name: user.name, email: user.email } });
+    const res = NextResponse.json({ ok: true, user: { name: user.name, email: user.email, phone: user.phone ?? "" } });
     res.cookies.set(sessionCookie(token));
     return res;
   } catch (e) {
