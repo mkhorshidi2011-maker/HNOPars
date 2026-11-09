@@ -27,7 +27,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2" aria-label="Ofogh Pars">
           <Image src="/images/logo.png" alt="" width={36} height={40} className="h-10 w-auto" priority />
           <span className="hidden text-sm font-bold text-primary sm:block">
-            {locale === "fa" ? "افق پارس" : "Ofogh Pars"}
+            {locale === "fa" ? "هوشمند نوآوران افق پارس" : "Hooshmand Noavaran Ofogh Pars"}
           </span>
         </Link>
 
