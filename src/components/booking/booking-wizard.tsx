@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { CalendarCheck, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+import { Calendar as PersianCalendar } from "@/components/ui/persian-calendar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -113,7 +114,31 @@ export function BookingWizard({ initialTopic = "general" }: { initialTopic?: Top
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <Label className="mb-2 block">{t("pickDate")}</Label>
-                  <Calendar mode="single" selected={date} onSelect={(selectedDate) => { setDate(selectedDate); setSlots(null); setTime(""); }} disabled={(d) => d < today || d > maxDate} className="rounded-xl border" />
+                  {isFa ? (
+                    <PersianCalendar
+                      selected={date}
+                      onSelect={(selectedDate) => {
+                        setDate(selectedDate);
+                        setSlots(null);
+                        setTime("");
+                      }}
+                      disabled={(d) => d < today || d > maxDate}
+                      className="rounded-xl border"
+                      locale="fa"
+                    />
+                  ) : (
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={(selectedDate) => {
+                        setDate(selectedDate);
+                        setSlots(null);
+                        setTime("");
+                      }}
+                      disabled={(d) => d < today || d > maxDate}
+                      className="rounded-xl border"
+                    />
+                  )}
                 </div>
                 <div>
                   <Label className="mb-2 block">{t("pickTime")}</Label>
