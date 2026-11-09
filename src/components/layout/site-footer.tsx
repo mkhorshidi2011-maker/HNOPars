@@ -13,8 +13,13 @@ export function SiteFooter() {
     <footer className="bg-brand-900 text-brand-100">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
         <div className="space-y-4">
-          <div className="inline-block rounded-xl bg-white p-3">
-            <Image src="/images/logo.png" alt="Ofogh Pars" width={80} height={90} className="h-16 w-auto" />
+          <div className="flex items-center gap-4">
+            <div className="inline-block rounded-xl bg-white p-3">
+              <Image src="/images/logo.png" alt="Ofogh Pars" width={100} height={112} className="h-20 w-auto" />
+            </div>
+            <div className="inline-block rounded-xl bg-white p-3">
+              <Image src="/images/snf.png" alt="SNF" width={100} height={112} className="h-20 w-auto" />
+            </div>
           </div>
           <p className="text-sm leading-7">{t("footer.about")}</p>
         </div>
