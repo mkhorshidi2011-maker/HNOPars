@@ -6,7 +6,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
-import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,12 +30,24 @@ const registerFormSchema = z.object({
 type LoginValues = z.infer<typeof loginFormSchema>;
 type RegisterValues = z.infer<typeof registerFormSchema>;
 
-export function AuthPanel({ compact = false }: { compact?: boolean }) {
+export function AuthPanel({
+  compact = false,
+  initialMode = "login",
+  onSuccess,
+}: {
+  compact?: boolean;
+  initialMode?: "login" | "register";
+  onSuccess?: (user: Me) => void;
+}) {
   const t = useTranslations("auth");
   const nav = useTranslations("nav");
-  const [mode, setMode] = useState<"login" | "register">("login");
+  const [mode, setMode] = useState<"login" | "register">(initialMode);
   const [user, setUser] = useState<Me>(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setMode(initialMode);
+  }, [initialMode]);
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -52,10 +63,15 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     toast.success(nav("logout"));
   }
 
+  function handleSuccess(u: Me) {
+    setUser(u);
+    onSuccess?.(u);
+  }
+
   if (loading) return <div className="h-40 animate-pulse rounded-2xl border bg-card" />;
   if (user)
     return (
-      <Card className="rounded-2xl">
+      <Card className={compact ? "rounded-2xl border-0 shadow-none" : "rounded-2xl"}>
         <CardContent className="flex items-center justify-between gap-4 py-6">
           <div>
             <p className="font-semibold">{t("loggedInAs", { name: user.name })}</p>
@@ -68,19 +84,17 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
 
   if (compact) {
     return (
-      <Card className="rounded-2xl">
-        <CardHeader>
-          <CardTitle>{mode === "login" ? t("loginTitle") : t("registerTitle")}</CardTitle>
-          <CardDescription>{mode === "login" ? t("loginSubtitle") : t("registerSubtitle")}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {mode === "login" ? (
-            <LoginForm onSuccess={setUser} onSwitch={() => setMode("register")} />
-          ) : (
-            <RegisterForm onSuccess={setUser} onSwitch={() => setMode("login")} />
-          )}
-        </CardContent>
-      </Card>
+      <div className="space-y-4">
+        <div className="space-y-1">
+          <h2 className="text-lg font-semibold leading-none">{mode === "login" ? t("loginTitle") : t("registerTitle")}</h2>
+          <p className="text-sm text-muted-foreground">{mode === "login" ? t("loginSubtitle") : t("registerSubtitle")}</p>
+        </div>
+        {mode === "login" ? (
+          <LoginForm onSuccess={handleSuccess} onSwitch={() => setMode("register")} />
+        ) : (
+          <RegisterForm onSuccess={handleSuccess} onSwitch={() => setMode("login")} />
+        )}
+      </div>
     );
   }
 
@@ -91,14 +105,14 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
           <CardTitle>{t("loginTitle")}</CardTitle>
           <CardDescription>{t("loginSubtitle")}</CardDescription>
         </CardHeader>
-        <CardContent><LoginForm onSuccess={setUser} /></CardContent>
+        <CardContent><LoginForm onSuccess={handleSuccess} /></CardContent>
       </Card>
       <Card className="rounded-2xl">
         <CardHeader>
           <CardTitle>{t("registerTitle")}</CardTitle>
           <CardDescription>{t("registerSubtitle")}</CardDescription>
         </CardHeader>
-        <CardContent><RegisterForm onSuccess={setUser} /></CardContent>
+        <CardContent><RegisterForm onSuccess={handleSuccess} /></CardContent>
       </Card>
     </div>
   );

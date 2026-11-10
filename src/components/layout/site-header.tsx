@@ -7,6 +7,8 @@ import { Menu, Languages, CalendarCheck, LogIn, LogOut, UserPlus, User } from "l
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { AuthPanel } from "@/components/auth/auth-panel";
 import { toast } from "sonner";
 
 const links = [
@@ -25,6 +27,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const router = useRouter();
   const [user, setUser] = useState<Me>(null);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "register">("login");
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -33,10 +37,22 @@ export function SiteHeader() {
       .catch(() => setUser(null));
   }, [pathname]);
 
+  function openAuth(mode: "login" | "register") {
+    setAuthMode(mode);
+    setAuthOpen(true);
+  }
+
   async function logout() {
     await fetch("/api/auth/logout", { method: "POST" });
     setUser(null);
     toast.success(t("logout"));
+    router.refresh();
+  }
+
+  function onAuthSuccess(u: Me) {
+    setUser(u);
+    setAuthOpen(false);
+    router.push("/");
     router.refresh();
   }
 
@@ -80,10 +96,10 @@ export function SiteHeader() {
             </DropdownMenu>
           ) : (
             <>
-              <Button render={<Link href="/login" />} variant="outline" size="sm" className="hidden gap-2 sm:inline-flex">
+              <Button variant="outline" size="sm" className="hidden gap-2 sm:inline-flex" onClick={() => openAuth("login")}>
                 <LogIn className="size-4" />{t("login")}
               </Button>
-              <Button render={<Link href="/register" />} size="sm" className="hidden gap-2 sm:inline-flex">
+              <Button size="sm" className="hidden gap-2 sm:inline-flex" onClick={() => openAuth("register")}>
                 <UserPlus className="size-4" />{t("register")}
               </Button>
             </>
@@ -113,8 +129,8 @@ export function SiteHeader() {
                   </>
                 ) : (
                   <>
-                    <Button render={<Link href="/login" />} variant="ghost" className="justify-start gap-2 text-base"><LogIn className="size-4" />{t("login")}</Button>
-                    <Button render={<Link href="/register" />} className="mt-1 gap-2"><UserPlus className="size-4" />{t("register")}</Button>
+                    <Button variant="ghost" className="justify-start gap-2 text-base" onClick={() => openAuth("login")}><LogIn className="size-4" />{t("login")}</Button>
+                    <Button className="mt-1 gap-2" onClick={() => openAuth("register")}><UserPlus className="size-4" />{t("register")}</Button>
                   </>
                 )}
                 <Button render={<Link href="/book" />} variant="secondary" className="mt-2 gap-2"><CalendarCheck className="size-4" />{t("book")}</Button>
@@ -123,6 +139,12 @@ export function SiteHeader() {
           </Sheet>
         </div>
       </div>
+
+      <Dialog open={authOpen} onOpenChange={setAuthOpen}>
+        <DialogContent className="max-w-md">
+          <AuthPanel compact initialMode={authMode} onSuccess={onAuthSuccess} />
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }
