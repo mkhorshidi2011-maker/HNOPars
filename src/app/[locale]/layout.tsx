@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Toaster } from "@/components/ui/sonner";
+import { ChatWidget } from "@/components/chat/chat-widget";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -55,6 +56,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
+          <ChatWidget />
           <Toaster richColors position={locale === "fa" ? "bottom-left" : "bottom-right"} />
         </NextIntlClientProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

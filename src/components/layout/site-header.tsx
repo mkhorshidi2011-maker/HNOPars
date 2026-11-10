@@ -142,7 +142,7 @@ export function SiteHeader() {
 
       <Dialog open={authOpen} onOpenChange={setAuthOpen}>
         <DialogContent className="max-w-md">
-          <AuthPanel compact initialMode={authMode} onSuccess={onAuthSuccess} />
+          <AuthPanel key={authMode} compact initialMode={authMode} onSuccess={onAuthSuccess} />
         </DialogContent>
       </Dialog>
     </header>

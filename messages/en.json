@@ -349,5 +349,30 @@
     "about": "Private Joint-Stock Company | Reg. No. 69759 | Shiraz",
     "links": "Quick Links",
     "rights": "All rights reserved."
+  },
+  "chat": {
+    "open": "Open chat",
+    "close": "Close",
+    "title": "Live chat",
+    "subtitle": "We usually reply within minutes",
+    "greeting": "Hi 👋 How can we help you? Write your message below.",
+    "placeholder": "Type your message…",
+    "namePlaceholder": "Your name (optional)",
+    "send": "Send",
+    "staff": "Support",
+    "closedNote": "This chat was closed; sending a new message will reopen it.",
+    "error": "Could not send your message. Please try again.",
+    "admin": {
+      "title": "Customer chats",
+      "empty": "No conversations yet.",
+      "pick": "Select a conversation",
+      "guest": "Guest",
+      "you": "You",
+      "closed": "Closed",
+      "close": "Close chat",
+      "reopen": "Reopen",
+      "replyPlaceholder": "Reply…",
+      "send": "Send"
+    }
   }
 }

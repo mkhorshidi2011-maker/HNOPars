@@ -94,3 +94,41 @@ model BlockedDate {
   date   DateTime @unique
   reason String?
 }
+
+enum ChatSender {
+  VISITOR
+  STAFF
+}
+
+enum ChatStatus {
+  OPEN
+  CLOSED
+}
+
+model ChatConversation {
+  id            String        @id @default(cuid())
+  tokenHash     String        @unique          // sha256 of the visitor's cookie token (guests + logged-in users)
+  userId        String?                        // your User.id when the visitor is logged in (no FK on purpose, so it works with any auth setup)
+  name          String?
+  email         String?
+  status        ChatStatus    @default(OPEN)
+  locale        String        @default("fa")
+  createdAt     DateTime      @default(now())
+  lastMessageAt DateTime      @default(now())
+  messages      ChatMessage[]
+
+  @@index([userId])
+  @@index([status, lastMessageAt])
+}
+
+model ChatMessage {
+  id             Int              @id @default(autoincrement())
+  conversationId String
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         ChatSender
+  body           String
+  readAt         DateTime?                      // set when staff has read a VISITOR message
+  createdAt      DateTime         @default(now())
+
+  @@index([conversationId, id])
+}

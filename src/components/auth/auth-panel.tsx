@@ -46,10 +46,6 @@ export function AuthPanel({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setMode(initialMode);
-  }, [initialMode]);
-
-  useEffect(() => {
     fetch("/api/auth/me")
       .then((r) => r.json())
       .then((d) => setUser(d.user ?? null))

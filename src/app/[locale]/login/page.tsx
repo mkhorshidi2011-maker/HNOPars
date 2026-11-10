@@ -1,4 +1,4 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { AuthPanel } from "@/components/auth/auth-panel";
 
 export default async function LoginPage({ params }: { params: Promise<{ locale: string }> }) {
